@@ -93,110 +93,21 @@
 
                     <div class="contact-list">
 
-                        <div class="contact">
+                        <div v-for="currentUser in contacts" class="contact">
 
-                            <img src="./img/avatar_1.jpg" alt="contatto">
+                            <img :src="currentUser.avatar" alt="contatto">
 
                             <div class="contact-information">
 
-                                <span>Michele</span>
+                                <span>{{currentUser.name}}</span>
 
                                 <span class="contact-last-message"><br>Ultimo messaggio inviato</span>
 
                             </div>
 
-
                         </div>
 
-                        <div class="contact">
 
-                            <img src="./img/avatar_1.jpg" alt="contatto">
-
-                            <div class="contact-information">
-
-                                <span>Michele</span>
-
-                                <span class="contact-last-message"><br>Ultimo messaggio inviato</span>
-
-                            </div>
-
-
-                        </div>
-
-                        <div class="contact">
-
-                            <img src="./img/avatar_1.jpg" alt="contatto">
-
-                            <div class="contact-information">
-
-                                <span>Michele</span>
-
-                                <span class="contact-last-message"><br>Ultimo messaggio inviato</span>
-
-                            </div>
-
-
-                        </div>
-
-                        <div class="contact">
-
-                            <img src="./img/avatar_1.jpg" alt="contatto">
-
-                            <div class="contact-information">
-
-                                <span>Michele</span>
-
-                                <span class="contact-last-message"><br>Ultimo messaggio inviato</span>
-
-                            </div>
-
-
-                        </div>
-
-                        <div class="contact">
-
-                            <img src="./img/avatar_1.jpg" alt="contatto">
-
-                            <div class="contact-information">
-
-                                <span>Michele</span>
-
-                                <span class="contact-last-message"><br>Ultimo messaggio inviato</span>
-
-                            </div>
-
-
-                        </div>
-
-                        <div class="contact">
-
-                            <img src="./img/avatar_1.jpg" alt="contatto">
-
-                            <div class="contact-information">
-
-                                <span>Michele</span>
-
-                                <span class="contact-last-message"><br>Ultimo messaggio inviato</span>
-
-                            </div>
-
-
-                        </div>
-
-                        <div class="contact">
-
-                            <img src="./img/avatar_1.jpg" alt="contatto">
-
-                            <div class="contact-information">
-
-                                <span>Michele</span>
-
-                                <span class="contact-last-message"><br>Ultimo messaggio inviato</span>
-
-                            </div>
-
-
-                        </div>
 
                     </div>
 
@@ -225,6 +136,7 @@
     </div>
 
 
+    <script src="https://unpkg.com/vue@3"></script>
     <script src="./js/script.js"></script>
 
 </body>
