@@ -50,7 +50,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Samuele',
+                    name: 'Emanuele',
                     avatar: './img/avatar_3.jpg',
                     visible: true,
                     messages: [
@@ -72,7 +72,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Alessandro B.',
+                    name: 'Palanga',
                     avatar: './img/avatar_4.jpg',
                     visible: true,
                     messages: [
@@ -89,7 +89,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Alessandro L.',
+                    name: 'Federico',
                     avatar: './img/avatar_5.jpg',
                     visible: true,
                     messages: [
@@ -145,7 +145,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Davide',
+                    name: 'Cassone',
                     avatar: './img/avatar_8.jpg',
                     visible: true,
                     messages: [
@@ -167,6 +167,8 @@ createApp({
                     ],
                 }
             ]
+
+
 
 
         }

@@ -52,7 +52,7 @@ body {
 
 .personal-account {
     height: 70px;
-    width: 500px;
+    width: 525px;
     background-color: #eaeaea;
     display: flex;
     justify-content: space-between;
@@ -129,7 +129,7 @@ body {
 .bell-notification {
     background-color: #8edafc;
     height: 80px;
-    width: 500px;
+    width: 515px;
 
     display: flex;
     align-items: center;
@@ -160,7 +160,7 @@ body {
 
 .input-search {
     background-color: #fafafa;
-    width: 500px;
+    width: 515px;
     height: 35px;
 }
 
@@ -168,7 +168,7 @@ body {
     width: 480px;
     border-radius: 5px;
     border: 1px solid #b1b1b1;
-    margin-left: 10px;
+    margin-left: 15px;
     height: 25px;
     margin-top: 5px;
 }
@@ -192,8 +192,9 @@ body {
 
 .contact-list {
     background-color: white;
-    width: 500px;
+    width: 515px;
     height: 613px;
+    overflow-y: scroll;
 }
 
 .contact img {
@@ -216,11 +217,16 @@ body {
 
 /* Chat Section */
 
+.chat-container-right {
+    position: relative;
+}
+
 .chat-image {
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
-    width: 798px;
-    height: 678px;
+    width: 783px;
+    height: 100%;
+    position: absolute;
 }
 
 .chat-input {
@@ -238,11 +244,14 @@ body {
     border: none;
     margin-top: 5px;
     margin-bottom: 5px;
+    z-index: 1;
 }
 
 .chat-input .fa-regular,
 .chat-input .fa-solid {
     color: rgb(78, 78, 78);
+    z-index: 1;
+    margin-left: 20px;
 }
 
 /* End chat section */
