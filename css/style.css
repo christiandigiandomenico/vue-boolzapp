@@ -80,6 +80,10 @@ body {
     background-color: #eaeaea;
 }
 
+.last-message-time {
+    font-size: 10px;
+}
+
 
 /* search-bar */
 #search-bar {
@@ -153,6 +157,7 @@ body {
     border-radius: 50%;
 
     background-color: white;
+    color: #8edafc;
 
 }
 
@@ -273,6 +278,7 @@ body {
     position: relative;
 
     max-width: 320px;
+    width: 400px;
 
     border-radius: 8px;
     background-color: #d5f9ba;

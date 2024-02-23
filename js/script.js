@@ -28,7 +28,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Fabio',
+                    name: 'Mattia M.',
                     avatar: './img/avatar_2.jpg',
                     visible: true,
                     messages: [
@@ -50,7 +50,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Emanuele',
+                    name: 'Emanuele P.',
                     avatar: './img/avatar_3.jpg',
                     visible: true,
                     messages: [
@@ -72,7 +72,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Palanga',
+                    name: 'Palanga R.',
                     avatar: './img/avatar_4.jpg',
                     visible: true,
                     messages: [
@@ -89,7 +89,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Federico',
+                    name: 'Federico D.',
                     avatar: './img/avatar_5.jpg',
                     visible: true,
                     messages: [
@@ -106,7 +106,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Claudia',
+                    name: 'Miriam E.',
                     avatar: './img/avatar_6.jpg',
                     visible: true,
                     messages: [
@@ -145,7 +145,7 @@ createApp({
                     ],
                 },
                 {
-                    name: 'Cassone',
+                    name: 'Cassone G.',
                     avatar: './img/avatar_8.jpg',
                     visible: true,
                     messages: [
@@ -170,6 +170,8 @@ createApp({
 
             activeContact: {},
 
+            newMessageText: ''
+
         }
     },
 
@@ -181,6 +183,31 @@ createApp({
         changeActiveContact(index) {
             this.activeContact = this.contacts[index]
         },
+
+        sendMessage() {
+            const newMsgObject = {
+
+                date: new Date().toLocaleString(),
+                message: this.newMessageText,
+                status: 'sent'
+
+            };
+            this.activeContact.messages.push(newMsgObject)
+            this.newMessageText = ''
+
+            setTimeout(() => {
+
+                const newAnswer = {
+                    message: 'Ok!',
+                    status: 'received',
+                    date: new Date().toLocaleString(),
+                }
+
+                this.activeContact.messages.push(newAnswer)
+
+            }, 3000)
+        }
+
     }
 
 }).mount("#app");

@@ -26,8 +26,8 @@
                 <aside id="side-bar">
                     <div id="side-menu">
                         <div id="user-profile">
-                            <img src="./img/avatar_io.jpg" alt="profile pic">
-                            <strong>Sofia</strong>
+                            <img src="./img/avatar_8.jpg" alt="profile pic">
+                            <strong>Christian</strong>
                         </div>
                         <div class="buttons">
                             <i class="fa-solid fa-circle-notch"></i>
@@ -119,10 +119,11 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </button>
 
-                        <input type="text" placeholder="Scrivi messaggio">
+                        <input v-model="newMessageText" @keyup.enter="sendMessage()" type="text"
+                            placeholder="Scrivi messaggio">
 
-                        <button>
-                            <i class="fa-solid fa-microphone"></i>
+                        <button @click="sendMessage()">
+                            <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </div>
                 </div>
