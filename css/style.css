@@ -253,6 +253,7 @@ body {
 #active-chat {
     height: calc(100% - 70px - 70px);
     background-image: url('../img/mine.jpg');
+    overflow: auto;
 }
 
 
@@ -269,6 +270,7 @@ body {
     margin: 0 auto;
 
     padding-top: 50px;
+
 }
 
 
@@ -301,6 +303,17 @@ body {
 
 .message.received {
     background-color: white;
+}
+
+.dropdown-toggle {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    display: none;
+}
+
+.message:hover .dropdown-toggle {
+    display: block;
 }
 
 /* /message */

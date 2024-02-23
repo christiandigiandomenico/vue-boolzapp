@@ -228,6 +228,13 @@ createApp({
             }, 3000)
         },
 
+        deleteMessage(message) {
+            const index = this.activeContact.messages.indexOf(message);
+            if (index !== -1) {
+                this.activeContact.messages.splice(index, 1);
+            }
+        }
+
     }
 
 }).mount("#app");
