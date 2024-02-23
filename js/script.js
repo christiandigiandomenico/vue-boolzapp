@@ -170,7 +170,9 @@ createApp({
 
             activeContact: {},
 
-            newMessageText: ''
+            newMessageText: '',
+
+            searchUser: ''
 
         }
     },
@@ -179,9 +181,20 @@ createApp({
         this.activeContact = this.contacts[0]
     },
 
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(this.searchUser.toLowerCase());
+            });
+        }
+    },
+
     methods: {
         changeActiveContact(index) {
-            this.activeContact = this.contacts[index]
+            const userContactIndex = this.contacts.indexOf(this.filteredContacts[index])
+
+            this.activeContact = this.contacts[userContactIndex]
+
         },
 
         sendMessage() {

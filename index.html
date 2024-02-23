@@ -51,12 +51,12 @@
                         <button>
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="search" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="searchUser" type="search" placeholder="Cerca o inizia una nuova chat">
 
                     </div>
                     <div id="chat-list">
 
-                        <div v-for="(contact, index) in contacts" class="chat-preview"
+                        <div v-for="(contact, index) in filteredContacts" class="chat-preview"
                             :class="contact == activeContact ? 'active' : ''" @click="changeActiveContact(index)">
                             <img class="user-pic" :src="contact.avatar" alt="immagine Michele">
 
