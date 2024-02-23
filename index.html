@@ -15,132 +15,128 @@
 
 <body>
 
-    <div class="container" id="app">
+    <div id="app" class="background">
 
-        <div class="color-superior"></div>
+        <div class="back-top"></div>
 
-        <div class="body-inferior"></div>
+        <div id="ui-wrapper">
 
-        <div class="chat-container">
+            <div id="ui">
 
-            <div class="navbar-superior">
+                <aside id="side-bar">
+                    <div id="side-menu">
+                        <div id="user-profile">
+                            <img src="./img/avatar_io.jpg" alt="profile pic">
+                            <strong>Sofia</strong>
+                        </div>
+                        <div class="buttons">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <div id="notification-reminder">
+                        <div class="icon">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <div>
+                            <span>
+                                Ricevi notifiche di nuovi messaggi
+                            </span>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <div id="search-bar">
 
-                <div class="personal-account">
-
-                    <div class="personal-information">
-
-                        <img src="./img/avatar_8.jpg" alt="avatar">
-
-                        <span>Christian</span>
+                        <button>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <input type="search" placeholder="Cerca o inizia una nuova chat">
 
                     </div>
+                    <div id="chat-list">
 
-                    <div class="personal-buttons">
+                        <div v-for="(contact, index) in contacts" class="chat-preview"
+                            :class="contact == activeContact ? 'active' : ''" @click="changeActiveContact(index)">
+                            <img class="user-pic" :src="contact.avatar" alt="immagine Michele">
 
-                        <i class="fa-solid fa-circle-notch"></i>
-                        <i class="fa-solid fa-message"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-
-                    </div>
-
-                </div>
-
-                <div class="personal-chat">
-
-                    <div class="personal-chat-left">
-
-                        <img src="./img/avatar_1.jpg" alt="contact">
-
-                        <span>Michele</span>
-
-                    </div>
-
-                    <div class="personal-chat-right">
-
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="chat-square">
-
-                <div class="chat-container-left">
-
-                    <div class="bell-notification">
-
-                        <i class="fa-solid fa-bell-slash"></i>
-
-                        <div class="notification-bell">
-
-                            <span class="receive-notification">Ricevi notifiche di nuovi messaggi</span>
-
-                            <span class="activate"><br>Attiva notifiche desktop</span>
-
+                            <div>
+                                <div class="user-name">{{ contact.name }}</div>
+                                <div class="last-message">Ultimo messaggio inviato</div>
+                                <div class="last-message-time">12:00</div>
+                            </div>
                         </div>
 
-                    </div>
-
-                    <div class="input-search">
-
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
 
                     </div>
+                </aside>
 
-                    <div class="contact-list">
 
-                        <div v-for="currentUser in contacts" class="contact">
+                <div id="active-chat-wrapper">
+                    <div id="top-bar">
+                        <div id="chat-profile">
+                            <div id="chat-profile-image">
+                                <img :src="activeContact.avatar" alt="profile pic">
+                            </div>
+                            <div>
+                                <div>{{activeContact.name}}</div>
+                                <span>
+                                    Ultimo accesso oggi alle 12:00
+                                </span>
+                            </div>
+                        </div>
 
-                            <img :src="currentUser.avatar" alt="contatto">
+                        <div class="buttons">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
 
-                            <div class="contact-information">
 
-                                <span>{{currentUser.name}}</span>
+                    <div id="active-chat">
 
-                                <span class="contact-last-message"><br>Ultimo messaggio inviato</span>
+                        <div class="container">
 
+                            <div v-for="currentMessage in activeContact.messages" class="message"
+                                :class="currentMessage.status">
+                                <div class="text">
+                                    {{currentMessage.message}}
+                                </div>
+                                <div class="time">
+                                    {{currentMessage.date}}
+                                </div>
                             </div>
 
+
                         </div>
 
 
-
                     </div>
 
-                </div>
+                    <div id="message-bar">
+                        <button>
+                            <i class="fa-regular fa-face-smile"></i>
+                        </button>
 
-                <div class="chat-container-right">
+                        <input type="text" placeholder="Scrivi messaggio">
 
-                    <div class="message-sent">Cassone</div>
-
-                    <div class="message-received">Cassone</div>
-
-                    <div class="chat-image"></div>
-
-                    <div class="chat-input">
-
-                        <i class="fa-regular fa-face-smile"></i>
-
-                        <input type="text" placeholder="Scrivi un messaggio">
-
-                        <i class="fa-solid fa-paper-plane"></i>
-
+                        <button>
+                            <i class="fa-solid fa-microphone"></i>
+                        </button>
                     </div>
-
                 </div>
-
             </div>
 
         </div>
 
+        <div class="back-bottom"></div>
+
     </div>
 
 
-    <script src="https://unpkg.com/vue@3"></script>
+    <!-- vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js"></script>
 
 </body>
