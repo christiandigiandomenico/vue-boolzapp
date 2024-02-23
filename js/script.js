@@ -213,7 +213,6 @@ createApp({
             };
             this.activeContact.messages.push(newMsgObject)
             this.newMessageText = ''
-            this.clearInput();
             this.isTyping = false;
 
             setTimeout(() => {
@@ -227,10 +226,6 @@ createApp({
                 this.activeContact.messages.push(newAnswer)
 
             }, 3000)
-        },
-
-        clearInput() {
-            this.newMessageText = '';
         },
 
     }

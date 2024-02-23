@@ -124,7 +124,7 @@
                         <input v-model="newMessageText" @input="isTyping = true" @keyup.enter="sendMessage()"
                             type="text" placeholder="Scrivi messaggio">
 
-                        <button @click="sendMessage()" @click="isTyping ? sendMessage() : clearInput()">
+                        <button @click="sendMessage()" @click="isTyping ? sendMessage() : newMessageText">
                             <i class="fa-solid" :class="sendMessageIcon"></i>
                         </button>
                     </div>
