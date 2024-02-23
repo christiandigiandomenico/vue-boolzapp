@@ -172,7 +172,9 @@ createApp({
 
             newMessageText: '',
 
-            searchUser: ''
+            searchUser: '',
+
+            isTyping: false,
 
         }
     },
@@ -186,6 +188,10 @@ createApp({
             return this.contacts.filter(contact => {
                 return contact.name.toLowerCase().includes(this.searchUser.toLowerCase());
             });
+        },
+
+        sendMessageIcon() {
+            return this.isTyping ? 'fa-solid fa-paper-plane' : 'fa-solid fa-microphone';
         }
     },
 
@@ -207,6 +213,8 @@ createApp({
             };
             this.activeContact.messages.push(newMsgObject)
             this.newMessageText = ''
+            this.clearInput();
+            this.isTyping = false;
 
             setTimeout(() => {
 
@@ -219,7 +227,11 @@ createApp({
                 this.activeContact.messages.push(newAnswer)
 
             }, 3000)
-        }
+        },
+
+        clearInput() {
+            this.newMessageText = '';
+        },
 
     }
 
