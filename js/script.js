@@ -35,17 +35,17 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '03/20/2020 16:30:00',
+                            date: '20/03/2020 16:30:00',
                             message: 'Ciao come stai?',
                             status: 'sent'
                         },
                         {
-                            date: '03/20/2020 16:30:55',
+                            date: '20/03/2020 16:30:55',
                             message: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received'
                         },
                         {
-                            date: '03/20/2020 16:35:00',
+                            date: '20/03/2020 16:35:00',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent'
                         }
@@ -57,17 +57,17 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '03/28/2020 10:10:40',
+                            date: '28/03/2020 10:10:40',
                             message: 'La Marianna va in campagna',
                             status: 'received'
                         },
                         {
-                            date: '03/28/2020 10:20:10',
+                            date: '28/03/2020 10:20:10',
                             message: 'Sicuro di non aver sbagliato chat?',
                             status: 'sent'
                         },
                         {
-                            date: '03/28/2020 16:15:22',
+                            date: '28/03/2020 16:15:22',
                             message: 'Ah scusa!',
                             status: 'received'
                         }
@@ -238,8 +238,9 @@ createApp({
         },
 
         getMessageTime(message) {
-            const messageDateTime = new Date(message.date);
-            return messageDateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+
+            const messageDateTime = message.date.split(" ")[1]
+            return messageDateTime.split(":").slice(0, 2).join(":");
         },
 
         deleteMessage(message) {
