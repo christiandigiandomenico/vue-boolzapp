@@ -1,3 +1,5 @@
+const { DateTime } = luxon;
+
 const { createApp } = Vue;
 
 createApp({
@@ -206,26 +208,33 @@ createApp({
         sendMessage() {
             const newMsgObject = {
 
-                date: new Date().toLocaleString(),
+                date: DateTime.now().toFormat('T'),
+                //date: new Date().toLocaleString(),
                 message: this.newMessageText,
                 status: 'sent'
 
             };
-            this.activeContact.messages.push(newMsgObject)
-            this.newMessageText = ''
-            this.isTyping = false;
 
-            setTimeout(() => {
+            if (this.newMessageText.length != 0 && this.newMessageText.trim()) {
 
-                const newAnswer = {
-                    message: 'Ok!',
-                    status: 'received',
-                    date: new Date().toLocaleString(),
-                }
+                this.activeContact.messages.push(newMsgObject)
+                this.newMessageText = ''
+                this.isTyping = false;
 
-                this.activeContact.messages.push(newAnswer)
+                setTimeout(() => {
 
-            }, 3000)
+                    const newAnswer = {
+                        message: 'Ok!',
+                        status: 'received',
+                        date: DateTime.now().toFormat('T'),
+                    }
+
+                    this.activeContact.messages.push(newAnswer)
+
+                }, 3000)
+
+            }
+
         },
 
         deleteMessage(message) {
