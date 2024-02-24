@@ -276,6 +276,16 @@ body {
 
 /* message */
 
+.welcome-message {
+    margin: auto;
+}
+
+.welcome-message p {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
 .message {
     position: relative;
 

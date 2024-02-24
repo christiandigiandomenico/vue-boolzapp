@@ -106,7 +106,11 @@
 
                         <div class="container">
 
-                            <div v-for="currentMessage in activeContact.messages" class="message"
+                            <div v-if="showWelcomeMessage == true" class="welcome-message">
+                                <p>Bevenuto! Seleziona una chat per cominciare.</p>
+                            </div>
+
+                            <div v-else="" v-for="currentMessage in activeContact.messages" class="message"
                                 :class="currentMessage.status">
 
                                 <i class="dropdown-toggle" data-bs-toggle="dropdown"></i>
@@ -121,7 +125,7 @@
                                     {{currentMessage.message}}
                                 </div>
                                 <div class="time">
-                                    {{currentMessage.date}}
+                                    {{getMessageTime(currentMessage)}}
                                 </div>
                             </div>
 

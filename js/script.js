@@ -6,6 +6,8 @@ createApp({
     data() {
         return {
 
+            showWelcomeMessage: true,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -203,13 +205,15 @@ createApp({
 
             this.activeContact = this.contacts[userContactIndex]
 
+            this.showWelcomeMessage = false
+
         },
 
         sendMessage() {
             const newMsgObject = {
 
-                date: DateTime.now().toFormat('T'),
-                //date: new Date().toLocaleString(),
+                //date: DateTime.now().toFormat('T'),
+                date: new Date().toLocaleString(),
                 message: this.newMessageText,
                 status: 'sent'
 
@@ -226,7 +230,8 @@ createApp({
                     const newAnswer = {
                         message: 'Ok!',
                         status: 'received',
-                        date: DateTime.now().toFormat('T'),
+                        //date: DateTime.now().toFormat('T'),
+                        date: new Date().toLocaleString(),
                     }
 
                     this.activeContact.messages.push(newAnswer)
@@ -241,10 +246,11 @@ createApp({
 
             const messageDateTime = message.date.split(" ")[1]
             return messageDateTime.split(":").slice(0, 2).join(":");
+
         },
 
-        deleteMessage(message) {
-            const index = this.activeContact.messages.indexOf(message);
+        deleteMessage(messageIndex) {
+            const index = this.activeContact.messages.indexOf(messageIndex);
             if (index !== -1) {
                 this.activeContact.messages.splice(index, 1);
             }
