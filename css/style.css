@@ -276,8 +276,15 @@ body {
 
 /* message */
 
+.welcome-message img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
 .welcome-message {
     margin: auto;
+    text-align: center;
 }
 
 .welcome-message p {
