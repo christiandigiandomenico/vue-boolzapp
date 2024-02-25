@@ -36,7 +36,10 @@
                         </div>
                         <div class="buttons">
                             <i class="fa-solid fa-circle-notch"></i>
-                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-message dropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                            <ul class="dropdown-menu">
+                                <li><input type="text" placeholder="Aggiungi un contatto"></li>
+                            </ul>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
@@ -102,9 +105,9 @@
                     </div>
 
 
-                    <div id="active-chat">
+                    <div id="active-chat" ref="myScrollEvent">
 
-                        <div class="container">
+                        <div class="container" ref="myScrollEvent">
 
                             <div v-if="showWelcomeMessage == true" class="welcome-message">
                                 <img src="./img/whatsapp-icon.png" alt="whatsappicon">

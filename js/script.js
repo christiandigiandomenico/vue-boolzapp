@@ -224,6 +224,7 @@ createApp({
                 this.activeContact.messages.push(newMsgObject)
                 this.newMessageText = ''
                 this.isTyping = false;
+                this.scrollToBottom();
 
                 setTimeout(() => {
 
@@ -235,6 +236,7 @@ createApp({
                     }
 
                     this.activeContact.messages.push(newAnswer)
+                    this.scrollToBottom();
 
                 }, 3000)
 
@@ -254,6 +256,23 @@ createApp({
             if (index !== -1) {
                 this.activeContact.messages.splice(index, 1);
             }
+        },
+
+        scrollToBottom() {
+
+            const targetRef = this.$refs.myScrollEvent;
+            this.$nextTick(() => {
+
+                targetRef.scrollTo(
+                    {
+                        top: targetRef.scrollHeight,
+                        left: 0,
+                        behavior: "smooth"
+                    }
+                )
+
+            })
+
         }
 
     }

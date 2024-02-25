@@ -110,7 +110,9 @@ body {
 
 /* /search-bar */
 
-
+.buttons .fa-solid {
+    color: #888;
+}
 
 #user-profile,
 #chat-profile {
