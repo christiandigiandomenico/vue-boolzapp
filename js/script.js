@@ -7,6 +7,7 @@ createApp({
         return {
 
             showWelcomeMessage: true,
+            newContact: '',
 
             contacts: [
                 {
@@ -172,6 +173,17 @@ createApp({
                 }
             ],
 
+            arrayAnswers: [
+                "Tutto bene, a te?",
+                "Secondo me no",
+                "Per me è la cipolla",
+                "Adesso non posso, ci sentiamo dopo!",
+                "Sentiamoci dopo",
+                "Oggi non mi sento tanto bene",
+                "Oggi mangiamo ravioli",
+                "Congratulazioni",
+            ],
+
             activeContact: {},
 
             newMessageText: '',
@@ -229,7 +241,7 @@ createApp({
                 setTimeout(() => {
 
                     const newAnswer = {
-                        message: 'Ok!',
+                        message: this.randomAnswer(),
                         status: 'received',
                         //date: DateTime.now().toFormat('T'),
                         date: new Date().toLocaleString(),
@@ -244,9 +256,9 @@ createApp({
 
         },
 
-        getMessageTime(message) {
+        getMessageTime(messageTime) {
 
-            const messageDateTime = message.date.split(" ")[1]
+            const messageDateTime = messageTime.date.split(" ")[1]
             return messageDateTime.split(":").slice(0, 2).join(":");
 
         },
@@ -273,6 +285,16 @@ createApp({
 
             })
 
+        },
+
+        //createContact() {
+        //this.contacts.push({ name: this.newContact, avatar: '../img/avatar_1.jpg', visible: true, messages: [] });
+        //this.newContact = '';
+        //},
+
+        randomAnswer() {
+            const number = Math.floor(Math.random() * this.arrayAnswers.length);
+            return this.arrayAnswers[number];
         }
 
     }

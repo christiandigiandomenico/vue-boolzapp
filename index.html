@@ -38,7 +38,12 @@
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message dropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
                             <ul class="dropdown-menu">
-                                <li><input type="text" placeholder="Aggiungi un contatto"></li>
+                                <li class="d-flex flex-column w-auto p-2   ">
+                                    <label for="newContact" class="form-label">Crea un nuovo contatto</label>
+                                    <input v-model="newContact" type="text" class="input-bar px-2 py-1 w-auto "
+                                        id="newContact" aria-describedby="texthepl" placeholder="Nome del contatto"
+                                        @keyup.enter="createContact()">
+                                </li>
                             </ul>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
