@@ -97,7 +97,7 @@
                                 <img :src="activeContact.avatar" alt="profile pic">
                             </div>
                             <div>
-                                <div>{{activeContact.name}}</div>
+                                <div class="contact-name">{{activeContact.name}}</div>
                                 <span class="lastaccess">
                                     Ultimo accesso oggi alle 12:00
                                 </span>
@@ -108,7 +108,12 @@
                             <i class="fa-solid fa-circle-half-stroke" @click="darkModeToggle()"></i>
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                            <i class="fa-solid fa-ellipsis-vertical dropdown" data-bs-toggle="dropdown"></i>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" @click="deleteChat(activeContact)" href="#">Delete
+                                        Conversation</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 

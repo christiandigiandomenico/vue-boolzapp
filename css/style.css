@@ -14,12 +14,14 @@ body {
 .dark-mode #side-bar,
 .dark-mode #top-bar,
 .dark-mode #side-bar #side-menu {
-    background-color: #797979;
+    background-color: #222e35;
 }
 
 .dark-mode .chat-preview .last-message,
 .dark-mode #chat-profile .lastaccess,
-.dark-mode .chat-preview .last-message-time {
+.dark-mode .chat-preview .last-message-time,
+.dark-mode #user-profile strong,
+.dark-mode #chat-profile .contact-name {
     color: white;
 }
 

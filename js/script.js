@@ -305,6 +305,14 @@ createApp({
         randomAnswer() {
             const number = Math.floor(Math.random() * this.arrayAnswers.length);
             return this.arrayAnswers[number];
+        },
+
+        deleteChat(contactIndex) {
+            const index = this.contacts.indexOf(contactIndex);
+            if (index > -1) {
+                this.contacts.splice(index, 1);
+                this.activeContact = {}
+            }
         }
 
     }
