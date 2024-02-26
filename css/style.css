@@ -63,6 +63,10 @@ body {
     color: white;
 }
 
+.dark-mode .chat-preview .user-name {
+    color: #557486;
+}
+
 /* end dark mode */
 
 #notification-reminder .fa-solid {
