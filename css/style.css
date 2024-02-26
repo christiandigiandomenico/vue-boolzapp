@@ -8,6 +8,67 @@ body {
     font-family: sans-serif;
 }
 
+/* Dark mode */
+
+.dark-mode #side-menu,
+.dark-mode #side-bar,
+.dark-mode #top-bar,
+.dark-mode #side-bar #side-menu {
+    background-color: #797979;
+}
+
+.dark-mode .chat-preview .last-message,
+.dark-mode #chat-profile .lastaccess {
+    color: white;
+}
+
+.dark-mode .buttons .fa-solid {
+    color: white;
+}
+
+.dark-mode #active-chat {
+    height: calc(100% - 70px - 70px);
+    background-image: url('../img/whatsappdarkmode.jpg');
+    overflow: auto;
+}
+
+.dark-mode #notification-reminder {
+    background-color: #a13434;
+}
+
+.dark-mode #notification-reminder .fa-solid {
+    color: #a13434;
+}
+
+.dark-mode #message-bar {
+    background-color: #525252
+}
+
+.dark-mode #message-bar button {
+    color: white;
+}
+
+/* end dark mode */
+
+#notification-reminder .fa-solid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 50px;
+    height: 50px;
+
+    padding: 6px;
+
+    border-radius: 50%;
+
+    background-color: white;
+    color: #8edafc;
+
+}
+
+/* Fine dark mode */
+
 #app {
     position: relative;
 
@@ -56,11 +117,6 @@ body {
 
     background-color: white;
 }
-
-#ui * {
-    /* border: dotted 1px red; */
-}
-
 
 /* sidebar */
 #side-bar {

@@ -192,6 +192,8 @@ createApp({
 
             isTyping: false,
 
+            darkMode: false,
+
         }
     },
 
@@ -284,6 +286,14 @@ createApp({
                 )
 
             })
+
+        },
+
+        darkModeToggle() {
+
+            this.darkMode = !this.darkMode;
+
+            document.documentElement.classList.toggle('dark-mode');
 
         },
 

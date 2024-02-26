@@ -74,8 +74,10 @@
                             <img class="user-pic" :src="contact.avatar" alt="immagine Michele">
 
                             <div>
-                                <div class="user-name">{{ contact.name }}</div>
-                                <div class="last-message">{{ contact.messages[contact.messages.length - 1].message }}
+                                <div class="vifcontainer" v-if="contact.messages.length > 0">
+                                    <div class="user-name">{{ contact.name }}</div>
+                                    <div class="last-message">{{ contact.messages[contact.messages.length - 1].message
+                                        }}</div>
                                 </div>
                                 <div class="last-message-time">{{getMessageTime(contact.messages[contact.messages.length
                                     - 1])}}
@@ -96,13 +98,14 @@
                             </div>
                             <div>
                                 <div>{{activeContact.name}}</div>
-                                <span>
+                                <span class="lastaccess">
                                     Ultimo accesso oggi alle 12:00
                                 </span>
                             </div>
                         </div>
 
                         <div class="buttons">
+                            <i class="fa-solid fa-circle-half-stroke" @click="darkModeToggle()"></i>
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -119,13 +122,14 @@
                                 <p>Bevenuto! Seleziona una chat per cominciare.</p>
                             </div>
 
-                            <div v-else="" v-for="currentMessage in activeContact.messages" class="message"
-                                :class="currentMessage.status">
+                            <div v-else="" v-for="currentMessage, messageIndex in activeContact.messages"
+                                class="message" :class="currentMessage.status">
 
                                 <i class="dropdown-toggle" data-bs-toggle="dropdown"></i>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Info Message</a></li>
-                                    <li><a class="dropdown-item" @click="deleteMessage(currentMessage)" href="#">Delete
+                                    <li><a class="dropdown-item" @click="deleteMessage(currentMessage, messageIndex)"
+                                            href="#">Delete
                                             Message</a>
                                     </li>
                                 </ul>
