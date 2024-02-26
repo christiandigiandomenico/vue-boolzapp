@@ -18,7 +18,8 @@ body {
 }
 
 .dark-mode .chat-preview .last-message,
-.dark-mode #chat-profile .lastaccess {
+.dark-mode #chat-profile .lastaccess,
+.dark-mode .chat-preview .last-message-time {
     color: white;
 }
 
@@ -45,6 +46,18 @@ body {
 }
 
 .dark-mode #message-bar button {
+    color: white;
+}
+
+.dark-mode .message {
+    background-color: #127e5e;
+}
+
+.dark-mode .message.received {
+    background-color: rgb(165, 165, 165);
+}
+
+.dark-mode .message .time {
     color: white;
 }
 
