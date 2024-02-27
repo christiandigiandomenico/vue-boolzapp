@@ -224,6 +224,8 @@ createApp({
         },
 
         sendMessage() {
+            const messageContact = this.activeContact
+
             const newMsgObject = {
 
                 //date: DateTime.now().toFormat('T'),
@@ -235,7 +237,7 @@ createApp({
 
             if (this.newMessageText.length != 0 && this.newMessageText.trim()) {
 
-                this.activeContact.messages.push(newMsgObject)
+                messageContact.messages.push(newMsgObject)
                 this.newMessageText = ''
                 this.isTyping = false;
                 this.scrollToBottom();
@@ -249,7 +251,7 @@ createApp({
                         date: new Date().toLocaleString(),
                     }
 
-                    this.activeContact.messages.push(newAnswer)
+                    messageContact.messages.push(newAnswer)
                     this.scrollToBottom();
 
                 }, 3000)
@@ -297,10 +299,10 @@ createApp({
 
         },
 
-        //createContact() {
-        //this.contacts.push({ name: this.newContact, avatar: '../img/avatar_1.jpg', visible: true, messages: [] });
-        //this.newContact = '';
-        //},
+        createContact() {
+            this.contacts.push({ name: this.newContact, avatar: '../img/avatar_1.jpg', visible: true, messages: [], date: new Date().toLocaleString() });
+            this.newContact = '';
+        },
 
         randomAnswer() {
             const number = Math.floor(Math.random() * this.arrayAnswers.length);
